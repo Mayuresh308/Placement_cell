@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('_bootstrap_meta')%>
+  <link rel="stylesheet" href="/css/interview.css">
+  <title>Schedule Interview</title>
+  <style>
+    body {
+      background: linear-gradient(
+        45deg,
+        #FF6B6B 8.33%,
+        #FF8770 8.33%,
+        #FF8770 16.67%,
+        #FFA07A 16.67%,
+        #FFA07A 25%,
+        #FFC86B 25%,
+        #FFC86B 33.33%,
+        #FFEA6B 33.33%,
+        #FFEA6B 41.67%,
+        #A4F87A 41.67%,
+        #A4F87A 50%,
+        #68EDC6 50%,
+        #68EDC6 58.33%,
+        #6BD9EA 58.33%,
+        #6BD9EA 66.67%,
+        #7A7AFF 66.67%,
+        #7A7AFF 75%,
+        #AC7AFF 75%,
+        #AC7AFF 83.33%,
+        #EA6BD9 83.33%,
+        #EA6BD9 91.67%,
+        #D06BF2 91.67%
+      );
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <%- include('_header') %>
+  <div class="container">
+    <form class="w-60 mx-auto mt-4" action="/company/schedule-interview" method="post" style="height: 60vh; display: grid; place-content: center; width: 530px; background: white; border-radius: 5px; box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.05);">
+      <h3 style="margin-bottom: 50px; color: black;">Schedule Interview</h3>
+
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <select class="form-select" aria-label="Default select example" name="id" id="name">
+          <option selected disabled>Select Student</option>
+          <% for(let student of students) { %>
+            <option value="<%= student.id %>"><%= student.name %></option>
+          <% } %>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="company" class="form-label">Company</label>
+        <input type="text" class="form-control" id="company" name="company"/>
+      </div>
+
+      <div class="mb-3">
+        <label for="date" class="form-label">Date</label>
+        <input type="date" class="form-control" id="date" name="date" />
+      </div>
+
+      <button class="btn btn-success align-self-center">
+        Schedule Interview
+      </button>
+    </form>
+  </div>
+  <%- include('_bootstrap_script')%>
+</body>
+</html>

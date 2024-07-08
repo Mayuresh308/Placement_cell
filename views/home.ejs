@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('_bootstrap_meta')%>
+  <title>Home</title>
+  <style>
+    body {
+      background: linear-gradient(45deg, #f06, #9f6, #06f, #f69);
+      background-size: 400% 400%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .header {
+      background-color: rgba(255, 255, 255, 0.9);
+      width: 100%;
+      padding: 10px;
+    }
+
+    .container {
+      margin-top: 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 5px;
+      box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      width: 75%;
+      overflow-x: auto; /* Add this property for horizontal scrolling */
+    }
+
+    h2 {
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .btn-add-student {
+	  height: 32px;
+	  width:150px;
+      margin-top: 10px;
+      background-color: #007bff; /* Blue color */
+      color: #fff;
+      border: none;
+      padding: 3px ;
+      border-radius: 5px;
+      text-decoration: none; /* Remove underlines */
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase; /* Uppercase text */
+      transition: background-color 0.3s; /* Add smooth hover effect */
+    }
+
+    .btn-add-student:hover {
+      background-color: #1dffec; /* Darker blue color on hover */
+    }
+
+    .table th {
+      font-weight: bold;
+    }
+
+    .table td {
+      vertical-align: middle;
+    }
+
+    .action-buttons {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .btn-delete {
+      background-color: #dc3545;
+      color: #fff;
+      border: none;
+    }
+
+    .btn-delete:hover {
+      background-color: #c82333;
+    }
+
+    #company_name {
+      text-decoration: none;
+      color: #007bff;
+    }
+
+    #company_name:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 767px) {
+      .col-6 {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .col-6.d-flex.justify-content-end {
+        text-align: center;
+      }
+      .btn-add-student {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .action-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <%- include('_header') %>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <h2>List of Students:</h2>
+      </div>
+      <div class="col-6 d-flex justify-content-end">
+        <a href="/students/create" type="button" class="btn btn-add-student">Add Student</a>
+      </div>
+    </div>
+    <% if (students.length > 0) { %>
+      <div class="mt-3 mb-3">
+        <table class="table table-bordered table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Batch</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Contact</th>
+              <th scope="col">DSA</th>
+              <th scope="col">WEB</th>
+              <th scope="col">REACT</th>
+              <th scope="col">Interview</th>
+              <th scope="col" class="text-end">Action</th>
+            </tr>
+          </thead>
+          <tbody id="myTable">
+            <% for (let student of students) { %>
+              <tr>
+                <th scope="row"><%= student.batch %></th>
+                <td><%= student.name %></td>
+                <td><%= student.email %></td>
+                <td><%= student.contactNumber %></td>
+                <td><%= student.dsa %></td>
+                <td><%= student.webd %></td>
+                <td><%= student.react %></td>
+                <% if (student.interviews.length) { %>
+                  <td>
+                    <% for (let company of student.interviews) { %>
+                      <a href=" " id="company_name"><%= company.company %></a>
+                    <% } %>
+                  </td>
+                <% } else { %>
+                  <td>NONE</td>
+                <% } %>
+                <td class="action-buttons">
+                  <a href="/students/delete/<%= student.id %>" type="button" class="btn btn-danger btn-delete">Delete</a>
+                </td>
+              </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    <% } else { %>
+      <div class="w-75 mx-auto mt-5">
+        <h2>No Records Found</h2>
+      </div>
+    <% } %>
+  </div>
+  <%- include('_bootstrap_script') %>
+</body>
+</html>
