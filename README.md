@@ -1,10 +1,4 @@
-#  🚀 Interactive Placement Hub
 
-**Hosted at: - [Placement Cell on Render](https://placement-cell-cn-mongoose-7.onrender.com) 🌐**
-
-Dive into the next frontier of campus placements, where opportunities meet innovation! 🌟
-
-### 🌈 Explore the Features:
 
 - **Swift Registration:** 🚀
   Glide through an effortless registration process, unlocking personalized job opportunities.
@@ -36,10 +30,4 @@ Dive into the next frontier of campus placements, where opportunities meet innov
 - **Ever-Evolving Platform:** 🔄
   Join us in shaping the future. We're open to your feedback, suggestions, and evolving needs.
 
-### 🧙‍♂️ Mongoose 7 Magic:
 
-Fueling our engine with Mongoose 7, witness the magic of a robust and efficient database connection. 🧙‍♂️🔗
-
-### 🚀 Your Placement Journey Begins Here:
-
-Fork the repository, contribute, and be part of the revolution reshaping the placement process. Embrace the future with the Interactive Placement Hub! 🚀
