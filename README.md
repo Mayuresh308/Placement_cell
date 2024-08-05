@@ -5,13 +5,21 @@
 Easy Registration: 🚀 Simple sign-up to unlock personalized job opportunities. 
 
 Smart Alerts: 📆 Automated interview notifications based on your preferences.
+
 Intuitive Dashboard: 🎯 Track interviews and get instant updates.
+
 Real-time Feedback: ✔️❌ Immediate performance feedback after interviews.
+
 Downloadable Insights: 📊💼 Get CSV reports of your achievements.
+
 User-Friendly Interface: 🖱️ Smooth navigation for a great experience.
+
 Top Security: 🔒 Your data is protected with the highest security standards.
+
 Customizable Criteria: 🎯 Set criteria to match the right jobs with your profile.
+
 Responsive Design: 📱💻 Enjoy a seamless experience on any device.
+
 Adaptive Platform: 🔄 We evolve with your feedback and needs.
 
 ---------------------------------------------
